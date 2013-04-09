@@ -15,13 +15,13 @@ import domain.DomainClassToMock.SignEnum;
 
 /**
  * 
- * This class serves to provide example code of typical JMockit usages.
- * More documentation can be found at: 
- *    http://jmockit.googlecode.com/svn/trunk/www/tutorial/BehaviorBasedTesting.html
- *    http://lmgtfy.com/?q=jmockit+examples
+ * This class serves to provide example code of typical JMockit usages. More
+ * documentation can be found at:
+ * http://jmockit.googlecode.com/svn/trunk/www/tutorial
+ * /BehaviorBasedTesting.html http://lmgtfy.com/?q=jmockit+examples
  * 
  * Feel free to add more examples.
- *
+ * 
  * @author vern
  */
 public class JMockItTest extends TestCase {
@@ -139,6 +139,32 @@ public class JMockItTest extends TestCase {
 	}
 
 	/**
+	 * Sometimes one needs a method to return a value but don't care what gets
+	 * passed in the params
+	 */
+	public void testParameterAgnostic() {
+
+		// Given
+		new NonStrictExpectations() {
+
+			{
+				mockedObject.getSomeReturnValueBasedOnParm(anyInt);
+				returns(DomainClassToMock.SignEnum.NEGATIVE);
+			}
+		};
+
+		// When
+		SignEnum firstResult = mockedObject.getSomeReturnValueBasedOnParm(0);
+		SignEnum secondResult = mockedObject.getSomeReturnValueBasedOnParm(-22);
+		SignEnum thirdResult = mockedObject.getSomeReturnValueBasedOnParm(1);
+
+		// Then
+		assertEquals(DomainClassToMock.SignEnum.NEGATIVE, firstResult);
+		assertEquals(DomainClassToMock.SignEnum.NEGATIVE, secondResult);
+		assertEquals(DomainClassToMock.SignEnum.NEGATIVE, thirdResult);
+	}
+
+	/**
 	 * Sometimes one needs a method to return a specific value based on the
 	 * input params.
 	 */
@@ -215,7 +241,8 @@ public class JMockItTest extends TestCase {
 	public void testReflection() {
 		// Given
 		String originalPrivateString = "a final string";
-		DomainClassToInstantiate realInstance = new DomainClassToInstantiate(originalPrivateString);
+		DomainClassToInstantiate realInstance = new DomainClassToInstantiate(
+				originalPrivateString);
 
 		assertEquals(originalPrivateString, realInstance.getPrivateField());
 

@@ -2,13 +2,13 @@ package domain;
 
 public class DomainClassToInstantiate {
 
-	private final String privateField;
+	private final String privateField2;
 
 	public DomainClassToInstantiate(String value) {
-		privateField = value;
+		privateField2 = value;
 	}
 
 	public String getPrivateField() {
-		return privateField;
+		return privateField2;
 	}
 }

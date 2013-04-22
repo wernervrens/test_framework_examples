@@ -3,10 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="/home/vern/source/test_examples/lib/jmockit.jar"/>
+	<classpathentry kind="lib" path="/home/vern/source/test_framework_examples/lib/jmockit.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
-	<classpathentry kind="lib" path="/home/vern/source/test_examples/lib/org.springframework.core-3.0.4.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/vern/source/test_examples/lib/org.springframework.test-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/vern/source/test_framework_examples/lib/org.springframework.core-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/vern/source/test_framework_examples/lib/org.springframework.test-3.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

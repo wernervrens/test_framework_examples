@@ -17,8 +17,8 @@ import domain.DomainClassToMock.SignEnum;
  * 
  * This class serves to provide example code of typical JMockit usages. More
  * documentation can be found at:
- * http://jmockit.googlecode.com/svn/trunk/www/tutorial
- * /BehaviorBasedTesting.html http://lmgtfy.com/?q=jmockit+examples
+ * http://jmockit.googlecode.com/svn/trunk/www/tutorial/BehaviorBasedTesting.html 
+ * http://lmgtfy.com/?q=jmockit+examples
  * 
  * Feel free to add more examples.
  * 
@@ -112,8 +112,8 @@ public class JMockItTest extends TestCase {
 		String injectedStaticValue = DomainClassToMock.getStaticFieldValue();
 
 		// Then
-		assertEquals(injectedStaticValue,
-				DomainClassToMock.getStaticFieldValue());
+		assertEquals(expectedStaticValue,
+				injectedStaticValue);
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class JMockItTest extends TestCase {
 		String injectedFinalValue = mockedObject.getFinalFieldValue();
 
 		// Then
-		assertEquals(injectedFinalValue, mockedObject.getFinalFieldValue());
+		assertEquals(expectedFinalValue, injectedFinalValue);
 	}
 
 	/**
@@ -180,14 +180,14 @@ public class JMockItTest extends TestCase {
 				mockedObject.getSomeReturnValueBasedOnParm(2);
 				returns(DomainClassToMock.SignEnum.NEUTRAL);
 
-				mockedObject.getSomeReturnValueBasedOnParm(-22);
+				mockedObject.getSomeReturnValueBasedOnParm(-23);
 				returns(DomainClassToMock.SignEnum.POSITIVE);
 			}
 		};
 
 		// When
 		SignEnum firstResult = mockedObject.getSomeReturnValueBasedOnParm(2);
-		SignEnum secondResult = mockedObject.getSomeReturnValueBasedOnParm(-22);
+		SignEnum secondResult = mockedObject.getSomeReturnValueBasedOnParm(-23);
 		SignEnum thirdResult = mockedObject.getSomeReturnValueBasedOnParm(1);
 
 		// Then
@@ -248,7 +248,7 @@ public class JMockItTest extends TestCase {
 
 		// When
 		String newPrivateString = "accessible via reflection";
-		ReflectionTestUtils.setField(realInstance, "privateField",
+		ReflectionTestUtils.setField(realInstance, "privateField2",
 				newPrivateString);
 		// Then
 		assertEquals(newPrivateString, realInstance.getPrivateField());

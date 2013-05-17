@@ -46,13 +46,13 @@ public class JMockItTest extends TestCase {
 
 		new NonStrictExpectations() {
 			{
-				mockedObject.getSomeReturnValue();
+				mockedObject.getReturnValueONE();
 				result = expectedPosition;
 			}
 		};
 
 		// When
-		BigDecimal actualPosition = mockedObject.getSomeReturnValue();
+		BigDecimal actualPosition = mockedObject.getReturnValueONE();
 
 		// Then
 		assertEquals(expectedPosition, actualPosition);
@@ -71,13 +71,13 @@ public class JMockItTest extends TestCase {
 
 		new NonStrictExpectations() {
 			{
-				mockedObject.getSomeReturnValue();
+				mockedObject.getReturnValueONE();
 				result = expectedPosition;
 			}
 		};
 
 		// When
-		BigDecimal actualPosition = mockedObject.getSomeReturnValue();
+		BigDecimal actualPosition = mockedObject.getReturnValueONE();
 
 		// Then
 		assertEquals(expectedPosition, actualPosition);
@@ -85,7 +85,7 @@ public class JMockItTest extends TestCase {
 		// And
 		new Verifications() {
 			{
-				mockedObject.getSomeReturnValue();
+				mockedObject.getReturnValueONE();
 				times = 1;
 			}
 		};

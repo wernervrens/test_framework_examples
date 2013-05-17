@@ -11,7 +11,7 @@ public class DomainClassToMock {
 		POSITIVE, NEGATIVE, NEUTRAL;
 	}
 
-	public BigDecimal getSomeReturnValue() {
+	public BigDecimal getReturnValueONE() {
 		return new BigDecimal(1);
 	}
 	
